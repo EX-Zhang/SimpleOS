@@ -1,0 +1,31 @@
+OUTPUT_FORMAT("elf32-i386")
+ENTRY(KernelEntry)
+SECTIONS
+{
+    .grub_sig 0x100000 : AT(0x100000)
+    {
+        *(.grub_sig)
+    }
+    .text :
+    {
+        *(.text)
+    }
+    .data :
+    {
+        *(.data)
+    }
+    .bss :
+    {
+        *(.bss)
+    }
+    /DISCARD/ :
+    {
+        *(.comment)
+        *(.eh_frame)
+    }
+}
+
+作者：silmerusse
+链接：https://www.zhihu.com/question/49580321/answer/117038530
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
