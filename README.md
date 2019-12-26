@@ -37,12 +37,3 @@ boot with grub2, add following code to the /boot/grub/grub.cfg
 	     set root='hd[disk num][partition num]'
 	     multiboot /kernel/kEntry
 	}
-
-For example, my file is placed in '/dev0/sda7/*' and format is ext2
-the boot code is written like this:
-	menuentry 'Simple OS'{
-	     insmod part_msdos
-	     insmod ext2
-	     set root='hd0,7'
-	     multiboot /kernel/kEntry
-	}
